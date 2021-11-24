@@ -25,12 +25,12 @@ JustDropIt is an app that allows you to anonymously post comments about your cla
 
 **Required Must-have Stories**
 
-- [ ] Login view
-- [ ] Settings view
-- [ ] Home view
-- [ ] Search view
-- [ ] Professor view
-- [ ] Create view
+- [x] Login view
+- [x] Settings view
+- [x] Home view
+- [x] Search view
+- [x] Professor view
+- [x] Create view
 - [ ] Login Method
 - [ ] Home Methods
 - [ ] Settings Method
@@ -80,11 +80,6 @@ JustDropIt is an app that allows you to anonymously post comments about your cla
 
 ## Wireframes
 ![](https://i.imgur.com/gnipK6p.jpg)
-
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
 
 ## Schema 
 

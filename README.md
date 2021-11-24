@@ -211,5 +211,5 @@ query.findObjectsInBackground {(posts: [PFObject]?, error: Error?) in
 
 ## Build Sprint 1
 
-![gif](https://imgur.com/SaBzqEv)
+![gif](https://imgur.com/SaBzqEv.gif)
 

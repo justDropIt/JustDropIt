@@ -25,7 +25,7 @@ JustDropIt is an app that allows you to anonymously post comments about your cla
 
 **Required Must-have Stories**
 
-* Login Screen
+-[] Login Screen
 * Connect to parse
 * Home view
 * Search view

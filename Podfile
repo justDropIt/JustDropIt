@@ -7,6 +7,7 @@ target 'JustDropIt' do
 
   # Pods for JustDropIt
   pod 'Parse'
+  pod 'GoogleSignIn'
 
   target 'JustDropItTests' do
     inherit! :search_paths

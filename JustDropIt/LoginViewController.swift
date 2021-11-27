@@ -14,10 +14,36 @@ class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBOutlet weak var pickerView: UIPickerView!
     
+    @IBOutlet weak var emailField: UITextField!
+    
     @IBAction func onEnterButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "enterSegue", sender: nil)
+        let userID = randomString(length: 50)
+        UserDefaults.standard.set(userID, forKey: "userID")
+        
+        let user = PFUser()
+        user.username = userID
+        user.password = "password"
+        user.email = emailField.text!
+        
+        user.signUpInBackground {
+            (succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+              let errorString = error.localizedDescription
+              print(errorString)
+            } else {
+              self.performSegue(withIdentifier: "enterSegue", sender: nil)
+            }
+        }
     }
     
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
+    
+    func randomString(length: Int) -> String {
+      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      return String((0..<length).map{ _ in letters.randomElement()! })
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

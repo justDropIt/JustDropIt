@@ -15,6 +15,8 @@
 		BB2E30A2274DFE7600D3C1E7 /* ProfessorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E30A1274DFE7600D3C1E7 /* ProfessorViewController.swift */; };
 		BB2E30A4274DFE8B00D3C1E7 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E30A3274DFE8B00D3C1E7 /* CreateViewController.swift */; };
 		BB89B2A427508DC100B8D31C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89B2A327508DC100B8D31C /* PostTableViewCell.swift */; };
+		BB99BD5D2753124200C8A203 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99BD5C2753124200C8A203 /* SearchTableViewCell.swift */; };
+		BB99BD5F275334D800C8A203 /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */; };
 		BBE1EF95274D733000C828F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1EF94274D733000C828F6 /* AppDelegate.swift */; };
 		BBE1EF97274D733000C828F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1EF96274D733000C828F6 /* SceneDelegate.swift */; };
 		BBE1EF9C274D733000C828F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE1EF9A274D733000C828F6 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		BB2E30A1274DFE7600D3C1E7 /* ProfessorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorViewController.swift; sourceTree = "<group>"; };
 		BB2E30A3274DFE8B00D3C1E7 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		BB89B2A327508DC100B8D31C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		BB99BD5C2753124200C8A203 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewCell.swift; sourceTree = "<group>"; };
 		BBE1EF91274D733000C828F6 /* JustDropIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDropIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE1EF94274D733000C828F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE1EF96274D733000C828F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,7 +166,9 @@
 				BB89B2A327508DC100B8D31C /* PostTableViewCell.swift */,
 				BB2E309D274DE07600D3C1E7 /* SettingsViewController.swift */,
 				BB2E309F274DF66B00D3C1E7 /* SearchViewController.swift */,
+				BB99BD5C2753124200C8A203 /* SearchTableViewCell.swift */,
 				BB2E30A1274DFE7600D3C1E7 /* ProfessorViewController.swift */,
+				BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */,
 				BB2E30A3274DFE8B00D3C1E7 /* CreateViewController.swift */,
 			);
 			path = JustDropIt;
@@ -433,6 +439,8 @@
 				BB2E30A2274DFE7600D3C1E7 /* ProfessorViewController.swift in Sources */,
 				BB2E309C274DA95400D3C1E7 /* HomeViewController.swift in Sources */,
 				BB89B2A427508DC100B8D31C /* PostTableViewCell.swift in Sources */,
+				BB99BD5F275334D800C8A203 /* ProfessorTableViewCell.swift in Sources */,
+				BB99BD5D2753124200C8A203 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

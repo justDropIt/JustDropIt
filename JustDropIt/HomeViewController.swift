@@ -23,27 +23,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let query = PFQuery(className:"Posts")
-        
-        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
-            if let error = error {
-                // Log details of the failure
-                print(error.localizedDescription)
-            } else if let objects = objects {
-                // Do something with the found objects
-                self.posts = objects
-                self.tableView.reloadData()
-            }
-        }
-        tableView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        let query = PFQuery(className:"Posts")
+//
+//        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+//            if let error = error {
+//                // Log details of the failure
+//                print(error.localizedDescription)
+//            } else if let objects = objects {
+//                // Do something with the found objects
+//                self.posts = objects
+//                self.tableView.reloadData()
+//            }
+//        }
+//        tableView.reloadData()
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         let query = PFQuery(className:"Posts")
         
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
@@ -68,20 +68,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
         
         let post = posts[indexPath.row]
-        
-        if indexPath.row == 0 {
-            let professor = post["professor"] as! String
-            let content = post["content"] as! String
-            let likes = post["likes"] as! String
-            let song = post["song"] as! String
 
-            cell.professorLabel.text = "@" + professor
-            cell.contentLabel.text = content
-            cell.likesLabel.text = likes
-            cell.songLabel.text = song
-        }
+        let professor = post["professor"] as! String
+        let content = post["content"] as! String
+        let likes = post["likes"] as! String
+        let song = post["song"] as! String
+        
+        cell.likes = likes
+        cell.post = post
+
+        cell.professorLabel.text = "@" + professor
+        cell.contentLabel.text = content
+        cell.likesLabel.text = likes
+        cell.songLabel.text = song
         
         tableView.rowHeight = 150
+        
+        
+        let userID = (PFUser.current()?.objectId)! as String
+        cell.userID = userID
+        
+        let likedBy = post["likedBy"] as! Array<String>
+        
+        if likedBy.contains(userID) {
+            cell.alreadyLiked()
+        }
         
         return cell
     }

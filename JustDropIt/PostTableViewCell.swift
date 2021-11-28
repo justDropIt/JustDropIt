@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class PostTableViewCell: UITableViewCell {
 
@@ -15,6 +16,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var songLabel: UILabel!
     
+    var likes = ""
+    var post = PFObject(className: "posts")
+    var userID = ""
     var liked: Bool = false
     
     @IBAction func onLikeButton(_ sender: Any) {
@@ -37,13 +41,46 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func like() {
-        self.liked = true
+        liked = true
         likeButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
+        
+        // Increase Like Count
+        let newLikeCount = String(Int(likes)! + 1)
+        likesLabel.text = newLikeCount
+        likes = newLikeCount
+        
+        // Update parse database
+        post["likes"] = newLikeCount
+        post.saveInBackground()
+        
+        var likedBy = post["likedBy"] as! Array<String>
+        likedBy.append(userID)
+        post["likedBy"] = likedBy
+        post.saveInBackground()
     }
     
     func unlike() {
-        self.liked = false
+        liked = false
         likeButton.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
+        
+        // Decrease Like Count
+        let newLikeCount = String(Int(likes)! - 1)
+        likesLabel.text = newLikeCount
+        likes = newLikeCount
+        
+        // Update parse database
+        post["likes"] = newLikeCount
+        post.saveInBackground()
+        
+        var likedBy = post["likedBy"] as! Array<String>
+        likedBy.removeAll { $0 == userID }
+        post["likedBy"] = likedBy
+        post.saveInBackground()
+    }
+    
+    func alreadyLiked() {
+        liked = true
+        likeButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
     }
 
 }

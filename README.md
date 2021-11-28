@@ -31,12 +31,14 @@ JustDropIt is an app that allows you to anonymously post comments about your cla
 - [x] Search view
 - [x] Professor view
 - [x] Create view
-- [ ] Login Method
-- [ ] Home Methods
-- [ ] Settings Method
-- [ ] Search Methods
-- [ ] Professor Methods
-- [ ] Create Methods
+- [x] Login Method
+- [x] Home Methods
+- [x] Settings Method
+- [x] Search View Methods
+- [x] Professor Methods
+- [x] Create Methods
+- [ ] Comment methods
+- [ ] Search Ability
 
 **Optional Nice-to-have Stories**
 

@@ -235,8 +235,7 @@
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <action selector="onLikeButton:" destination="Uxm-uM-dnH" eventType="touchUpInside" id="Ybq-1u-eVJ"/>
-                                                        <action selector="onlikeButton:" destination="Uxm-uM-dnH" eventType="touchUpInside" id="eVp-Bc-ecn"/>
+                                                        <action selector="onLikeButton:" destination="Uxm-uM-dnH" eventType="touchUpInside" id="kIL-lq-5gy"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibe:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlB-VA-TPt">
@@ -315,6 +314,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Post">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onPostButton:" destination="ndO-pm-wTb" eventType="touchUpInside" id="7Wt-8O-6IT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcQ-0J-p0n">
                                 <rect key="frame" x="20" y="246" width="388" height="21"/>
@@ -331,7 +333,6 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="content..." translatesAutoresizingMaskIntoConstraints="NO" id="9AK-fV-8w7">
                                 <rect key="frame" x="20" y="76" width="388" height="150"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="gqz-dE-dMY"/>
                                 </constraints>
@@ -360,6 +361,12 @@
                             <constraint firstItem="Jx4-7m-zTY" firstAttribute="top" secondItem="xWZ-Ks-g6m" secondAttribute="bottom" constant="50" id="tdf-Ut-95R"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chooseSongButton" destination="xWZ-Ks-g6m" id="NZr-G9-Och"/>
+                        <outlet property="contentTextView" destination="9AK-fV-8w7" id="dEX-5x-kWT"/>
+                        <outlet property="professorLabel" destination="0ly-h7-tHt" id="2yj-Uu-v0n"/>
+                        <outlet property="songLabel" destination="JcQ-0J-p0n" id="guS-V1-2pA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNZ-BI-ebp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -74,8 +74,8 @@ class ProfessorTableViewCell: UITableViewCell {
         liked = true
         likeButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
     }
-    
-    @IBAction func onlikeButton(_ sender: Any) {
+
+    @IBAction func onLikeButton(_ sender: Any) {
         if !liked {
             like()
         } else {

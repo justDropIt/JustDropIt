@@ -46,7 +46,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return posts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {      
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
         
         let post = posts[indexPath.row]
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userID = userID
         
         let likedBy = post["likedBy"] as! Array<String>
-        
+                
         if likedBy.contains(userID) {
             cell.alreadyLiked()
         }

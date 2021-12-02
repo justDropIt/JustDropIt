@@ -38,7 +38,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             }
         }
-        tableView.reloadData()
     }
     
     
@@ -71,7 +70,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userID = userID
         
         let likedBy = post["likedBy"] as! Array<String>
-                
+        
         if likedBy.contains(userID) {
             cell.alreadyLiked()
         }

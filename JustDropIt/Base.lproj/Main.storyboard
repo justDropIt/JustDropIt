@@ -161,6 +161,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="kgv-GA-5Le"/>
                     <connections>
+                        <outlet property="searchBar" destination="bGX-3V-WRp" id="nRE-Ow-uis"/>
                         <outlet property="tableView" destination="fOe-uT-NJO" id="4ut-6A-cUu"/>
                         <segue destination="3dU-s4-rGH" kind="show" identifier="professorSegue" id="BCV-w6-AeE"/>
                     </connections>

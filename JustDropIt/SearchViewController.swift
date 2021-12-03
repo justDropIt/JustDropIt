@@ -8,15 +8,17 @@
 import UIKit
 import Parse
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var professors = [PFObject]()
     
     var selectedProfessorString = ""
     
     var professorArray = [String]()
+    var filteredProfessorArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
+        searchBar.delegate = self
 
         let query = PFQuery(className:"Posts")
         query.selectKeys(["professor"])
@@ -49,19 +49,49 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 self.professors = objects
                 self.tableView.reloadData()
+                
+                self.filteredProfessorArray = self.professorArray
             }
         }
-        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let query = PFQuery(className:"Posts")
+        query.selectKeys(["professor"])
+        
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if let error = error {
+                // Log details of the failure
+                print(error.localizedDescription)
+            } else if let objects = objects {
+                // Do something with the found objects
+                for object in objects {
+                    let objectString = object["professor"] as! String
+                    if !self.professorArray.contains(objectString) {
+                        self.professorArray.append(objectString)
+                    } else {
+                        
+                    }
+                }
+                
+                self.professors = objects
+                self.tableView.reloadData()
+                
+                self.filteredProfessorArray = self.professorArray
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return professorArray.count
+        return filteredProfessorArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as! SearchTableViewCell
         
-        let professorString = professorArray[indexPath.row]
+        let professorString = filteredProfessorArray[indexPath.row]
 
         cell.professorLabel.text = "@" + professorString
         
@@ -77,6 +107,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.performSegue(withIdentifier: "professorSegue", sender: nil)
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredProfessorArray = searchText.isEmpty ? professorArray : professorArray.filter { (item: String) -> Bool in
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        tableView.reloadData()
+    }
 
 
     // MARK: - Navigation

@@ -598,7 +598,7 @@
 		45E9D0A1362AB20B5CD659FA38D2CF16 /* PFPropertyInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPropertyInfo.h; path = Parse/Parse/Internal/PropertyInfo/PFPropertyInfo.h; sourceTree = "<group>"; };
 		473A51B0397F3CD4A5A249A086882F1E /* PFMutableObjectState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutableObjectState.h; path = Parse/Parse/Internal/Object/State/PFMutableObjectState.h; sourceTree = "<group>"; };
 		4944D5526403BC08117B5FD677DB81C4 /* PFKeyValueCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFKeyValueCache.h; path = Parse/Parse/Internal/KeyValueCache/PFKeyValueCache.h; sourceTree = "<group>"; };
-		49F5418E8A4E503749A35F9EE39D11A8 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
+		49F5418E8A4E503749A35F9EE39D11A8 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
 		4A484B02E65D39BCFA9311F06CBF0D8D /* PFObjectFileCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFObjectFileCoder.h; path = Parse/Parse/Internal/Object/Coder/File/PFObjectFileCoder.h; sourceTree = "<group>"; };
 		4A948EBBFF2444CDFBE5C0C50E5DBAC7 /* PFURLSession_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSession_Private.h; path = Parse/Parse/Internal/Commands/CommandRunner/URLSession/Session/PFURLSession_Private.h; sourceTree = "<group>"; };
 		4B1AF2713E99F8E2B783A2B8754028B0 /* PFQueryUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFQueryUtilities.m; path = Parse/Parse/Internal/Query/Utilities/PFQueryUtilities.m; sourceTree = "<group>"; };
@@ -759,7 +759,7 @@
 		9C8FA6999AB5E9C65946D29EC6A095DD /* PFUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUser.h; path = Parse/Parse/PFUser.h; sourceTree = "<group>"; };
 		9CD09372F1176401B063B6558B58650D /* PFAnalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAnalytics.m; path = Parse/Parse/PFAnalytics.m; sourceTree = "<group>"; };
 		9D3658CEB7EB90C4F8C9FE714095BCFF /* PFCommandRunningConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCommandRunningConstants.m; path = Parse/Parse/Internal/Commands/CommandRunner/PFCommandRunningConstants.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F7A0C6DEC72A4D859239958F7B3696D /* PFSessionUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSessionUtilities.h; path = Parse/Parse/Internal/Session/Utilities/PFSessionUtilities.h; sourceTree = "<group>"; };
 		A021FC336F0377103160FF79400B01BB /* PFPropertyInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPropertyInfo.m; path = Parse/Parse/Internal/PropertyInfo/PFPropertyInfo.m; sourceTree = "<group>"; };
 		A043784428D0BEA491E3F01B8F4F686F /* PFPushController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPushController.h; path = Parse/Parse/Internal/Push/Controller/PFPushController.h; sourceTree = "<group>"; };
@@ -913,7 +913,7 @@
 		F6E1613966EE064C2816F2E5CF4329FE /* PFCloud+Synchronous.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFCloud+Synchronous.h"; path = "Parse/Parse/PFCloud+Synchronous.h"; sourceTree = "<group>"; };
 		F705F5B6E82A77A1F2314FED2B39EFF1 /* PFInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFInstallation.h; path = Parse/Parse/PFInstallation.h; sourceTree = "<group>"; };
 		F7826B84BA0BC800F28F1BF6EA9F3C55 /* PFCurrentInstallationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCurrentInstallationController.m; path = Parse/Parse/Internal/Installation/CurrentInstallationController/PFCurrentInstallationController.m; sourceTree = "<group>"; };
-		F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Bolts; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F87AD03CACF0AF78D3944F0912ECB3 /* PFMutableUserState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableUserState.m; path = Parse/Parse/Internal/User/State/PFMutableUserState.m; sourceTree = "<group>"; };
 		F916C4622DE30BE7BA31366ABEBB2F62 /* PFErrorUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFErrorUtilities.h; path = Parse/Parse/Internal/PFErrorUtilities.h; sourceTree = "<group>"; };
 		F9B9CFA49DA411CAE732846ECAB8AECC /* PFSQLiteDatabaseResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFSQLiteDatabaseResult.m; path = Parse/Parse/Internal/LocalDataStore/SQLite/PFSQLiteDatabaseResult.m; sourceTree = "<group>"; };
@@ -1450,7 +1450,6 @@
 				F0B23D144BCC97B16256E714C59BCE8D /* Support Files */,
 				2B1F807732A18E2F6DF9490BC0FA7B0F /* Tasks */,
 			);
-			name = Bolts;
 			path = Bolts;
 			sourceTree = "<group>";
 		};
@@ -1465,7 +1464,7 @@
 		5D9FE94542DBD37E9EC3FC75FAA64FEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts */,
+				F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */,
 				0652F2476C7C87C6C0F6CB68072EA25F /* Parse */,
 				ED7ADA84A7005589821D254428CD2D26 /* Parse-Parse */,
 				8F49453BB9A900207086E1126DAD7332 /* Pods-JustDropIt */,
@@ -1540,7 +1539,6 @@
 				314934657C3DEC46192BDCD92EFE910D /* Core */,
 				8BA18414E4921946B00C78C086336B60 /* Support Files */,
 			);
-			name = Parse;
 			path = Parse;
 			sourceTree = "<group>";
 		};
@@ -1860,7 +1858,7 @@
 			);
 			name = Bolts;
 			productName = Bolts;
-			productReference = F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts */;
+			productReference = F84B331B5D6AAF1548DD1BB004AE5C2A /* Bolts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		79F668E3A2EEF261CF7276863237D8BD /* Pods-JustDropIt-JustDropItUITests */ = {
@@ -2659,7 +2657,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2766,7 +2764,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

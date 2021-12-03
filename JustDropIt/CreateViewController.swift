@@ -33,6 +33,8 @@ class CreateViewController: UIViewController, UITextViewDelegate {
         contentTextView.layer.cornerRadius = 10
         
         professorLabel.text = "@" + selectedProfessor
+        
+        _ = PFUser.current()?.object(forKey: "emailVerified")
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -42,24 +44,30 @@ class CreateViewController: UIViewController, UITextViewDelegate {
     @IBAction func onPostButton(_ sender: Any) {
         let post = PFObject(className: "Posts")
         
+        let university = PFUser.current()!["university"] as! String
+        
         post["author"] = PFUser.current()
         post["professor"] = selectedProfessor
         post["content"] = contentTextView.text
         post["song"] = song
         post["likes"] = likes
         post["likedBy"] = likedBy
+        post["university"] = university
         
         post.saveInBackground { (succeeded, error)  in
             if (succeeded) {
                 // The object has been saved.
-                print("saved")
+                self.dismiss(animated: true, completion: nil)
             } else {
                 // There was a problem, check error.description
-                print(error?.localizedDescription as Any)
+                let errorString = error?.localizedDescription
+                let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default) { (alertAction) in })
+                
+                self.present(alert, animated: true, completion: nil)
             }
         }
-        
-        dismiss(animated: true, completion: nil)
     }
     
     

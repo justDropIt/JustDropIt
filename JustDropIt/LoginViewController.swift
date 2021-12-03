@@ -25,13 +25,20 @@ class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         user.password = "password"
         user.email = emailField.text!
         
+        let pickedUniversity = universities[pickerView.selectedRow(inComponent: 0)]
+        user["university"] = pickedUniversity
+        
         user.signUpInBackground {
             (succeeded: Bool, error: Error?) -> Void in
             if let error = error {
-              let errorString = error.localizedDescription
-              print(errorString)
+                let errorString = error.localizedDescription
+                let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default) { (alertAction) in })
+                
+                self.present(alert, animated: true, completion: nil)
             } else {
-              self.performSegue(withIdentifier: "enterSegue", sender: nil)
+                self.performSegue(withIdentifier: "enterSegue", sender: nil)
             }
         }
     }

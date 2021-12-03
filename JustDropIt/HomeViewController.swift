@@ -25,8 +25,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
+        let thisUniversity = PFUser.current()!["university"] as! String
+        
+        let innerQuery : PFQuery = PFUser.query()!
+        innerQuery.whereKey("university", equalTo: thisUniversity)
+        
         let query = PFQuery(className:"Posts")
+        query.whereKey("author", matchesQuery: innerQuery)
         
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {

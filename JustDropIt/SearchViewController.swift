@@ -12,6 +12,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var addProfessorButton: UIBarButtonItem!
     
     var professors = [PFObject]()
     
@@ -113,7 +114,25 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         tableView.reloadData()
     }
-
+    
+    
+    @IBAction func onAddProfessorButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Professor", message: "Enter name of new professor", preferredStyle: .alert)
+        alert.addTextField()
+        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { [weak alert] (_) in
+            let professorName = (alert?.textFields![0])?.text
+            self.professorArray.append(professorName!)
+            
+            self.filteredProfessorArray = self.professorArray
+            
+            self.tableView.reloadData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default) { (alertAction) in })
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 
     // MARK: - Navigation
 

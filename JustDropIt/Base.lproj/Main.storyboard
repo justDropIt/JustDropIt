@@ -159,8 +159,15 @@
                         <viewLayoutGuide key="safeArea" id="UMq-Mj-7eS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="kgv-GA-5Le"/>
+                    <navigationItem key="navigationItem" title="Search" id="kgv-GA-5Le">
+                        <barButtonItem key="rightBarButtonItem" image="person.crop.circle.fill.badge.plus" catalog="system" id="fxW-cy-bz1">
+                            <connections>
+                                <action selector="onAddProfessorButton:" destination="15z-Hp-zde" id="yuK-rY-UiS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addProfessorButton" destination="fxW-cy-bz1" id="VWs-DB-vwS"/>
                         <outlet property="searchBar" destination="bGX-3V-WRp" id="nRE-Ow-uis"/>
                         <outlet property="tableView" destination="fOe-uT-NJO" id="4ut-6A-cUu"/>
                         <segue destination="3dU-s4-rGH" kind="show" identifier="professorSegue" id="BCV-w6-AeE"/>
@@ -509,6 +516,7 @@
         <image name="at.badge.plus" catalog="system" width="128" height="111"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

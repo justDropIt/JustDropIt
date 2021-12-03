@@ -118,7 +118,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func onAddProfessorButton(_ sender: Any) {
         let alert = UIAlertController(title: "Add Professor", message: "Enter name of new professor", preferredStyle: .alert)
-        alert.addTextField()
+        alert.addTextField{ textField in
+            textField.placeholder = "Professor"
+        }
         alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { [weak alert] (_) in
             let professorName = (alert?.textFields![0])?.text
             self.professorArray.append(professorName!)

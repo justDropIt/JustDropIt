@@ -8,13 +8,17 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate {
     
-    var universities : NSMutableArray = []
+    var universities = [String]()
+    
+    var filteredUniversities = [String]()
     
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var emailField: UITextField!
+    
+    @IBOutlet var searchBar: UISearchBar!
     
     @IBAction func onEnterButton(_ sender: Any) {
         let userID = randomString(length: 50)
@@ -25,7 +29,7 @@ class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         user.password = "password"
         user.email = emailField.text!
         
-        let pickedUniversity = universities[pickerView.selectedRow(inComponent: 0)]
+        let pickedUniversity = filteredUniversities[pickerView.selectedRow(inComponent: 0)]
         user["university"] = pickedUniversity
         
         user.signUpInBackground {
@@ -57,11 +61,11 @@ class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return universities.count
+        return filteredUniversities.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return universities[row] as? String
+        return filteredUniversities[row]
     }
     
 
@@ -71,6 +75,15 @@ class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredUniversities = searchText.isEmpty ? universities : universities.filter { (item: String) -> Bool in
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        pickerView.reloadAllComponents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,12 +99,13 @@ class LoginViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
              } else if let data = data {
                  let dataArray = try! JSONSerialization.jsonObject(with: data, options: []) as! NSArray
 
-                 let newArray : NSMutableArray = []
+                 var newArray = [String]()
                  
                  for universityObject in dataArray {
-                     newArray.add((universityObject as! [String: Any])["name"]! as! String)
+                     newArray.append((universityObject as! [String: Any])["name"]! as! String)
                  }
                  self.universities = newArray
+                 self.filteredUniversities = self.universities
                  self.pickerView.reloadAllComponents()
              }
         }

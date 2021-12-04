@@ -110,6 +110,40 @@
             </objects>
             <point key="canvasLocation" x="1891" y="65"/>
         </scene>
+        <!--Vibe View Controller-->
+        <scene sceneID="qpX-rn-cMO">
+            <objects>
+                <viewController id="tue-iH-XbH" customClass="VibeViewController" customModule="JustDropIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cja-za-i99">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbC-mF-7k3">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oau-fu-IYc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DbC-mF-7k3" firstAttribute="top" secondItem="Oau-fu-IYc" secondAttribute="top" id="42e-Td-Ghg"/>
+                            <constraint firstItem="DbC-mF-7k3" firstAttribute="leading" secondItem="Oau-fu-IYc" secondAttribute="leading" id="46r-dT-jac"/>
+                            <constraint firstItem="Oau-fu-IYc" firstAttribute="bottom" secondItem="DbC-mF-7k3" secondAttribute="bottom" id="8hY-iL-3fZ"/>
+                            <constraint firstItem="Oau-fu-IYc" firstAttribute="trailing" secondItem="DbC-mF-7k3" secondAttribute="trailing" id="ybH-Lz-5ov"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="DbC-mF-7k3" id="CT6-5n-gMT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2b-FX-Upr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="2367"/>
+        </scene>
         <!--Search-->
         <scene sceneID="NlL-bc-JSG">
             <objects>
@@ -161,6 +195,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="kgv-GA-5Le">
                         <barButtonItem key="rightBarButtonItem" image="person.crop.circle.fill.badge.plus" catalog="system" id="fxW-cy-bz1">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onAddProfessorButton:" destination="15z-Hp-zde" id="yuK-rY-UiS"/>
                             </connections>
@@ -317,7 +352,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-7m-zTY">
-                                <rect key="frame" x="20" y="368" width="388" height="38"/>
+                                <rect key="frame" x="20" y="361" width="388" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Post">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -332,13 +367,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWZ-Ks-g6m">
-                                <rect key="frame" x="100" y="287" width="228" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Choose Song">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="content..." translatesAutoresizingMaskIntoConstraints="NO" id="9AK-fV-8w7">
                                 <rect key="frame" x="20" y="76" width="388" height="150"/>
                                 <constraints>
@@ -348,10 +376,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add link here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-uI-pJF">
+                                <rect key="frame" x="20" y="287" width="388" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="url"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0xf-Km-U1y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Jx4-7m-zTY" firstAttribute="top" secondItem="Yzl-uI-pJF" secondAttribute="bottom" constant="40" id="08t-Y6-lOL"/>
                             <constraint firstItem="Jx4-7m-zTY" firstAttribute="leading" secondItem="0xf-Km-U1y" secondAttribute="leading" constant="20" id="21D-Wa-H9M"/>
                             <constraint firstItem="JcQ-0J-p0n" firstAttribute="leading" secondItem="0xf-Km-U1y" secondAttribute="leading" constant="20" id="8Zh-QC-QTq"/>
                             <constraint firstItem="0xf-Km-U1y" firstAttribute="trailing" secondItem="Jx4-7m-zTY" secondAttribute="trailing" constant="20" id="AEx-a3-qe3"/>
@@ -360,20 +394,19 @@
                             <constraint firstItem="0xf-Km-U1y" firstAttribute="trailing" secondItem="JcQ-0J-p0n" secondAttribute="trailing" constant="20" id="G2p-cf-Awa"/>
                             <constraint firstItem="0xf-Km-U1y" firstAttribute="trailing" secondItem="9AK-fV-8w7" secondAttribute="trailing" constant="20" id="HZY-I6-nZW"/>
                             <constraint firstItem="9AK-fV-8w7" firstAttribute="leading" secondItem="0xf-Km-U1y" secondAttribute="leading" constant="20" id="HqP-dF-EVz"/>
-                            <constraint firstItem="xWZ-Ks-g6m" firstAttribute="top" secondItem="JcQ-0J-p0n" secondAttribute="bottom" constant="20" id="Iju-r6-H8Q"/>
-                            <constraint firstItem="xWZ-Ks-g6m" firstAttribute="leading" secondItem="0xf-Km-U1y" secondAttribute="leading" constant="100" id="MXj-fG-ZXn"/>
+                            <constraint firstItem="Yzl-uI-pJF" firstAttribute="top" secondItem="JcQ-0J-p0n" secondAttribute="bottom" constant="20" id="K7T-Ov-r6j"/>
                             <constraint firstItem="9AK-fV-8w7" firstAttribute="top" secondItem="0ly-h7-tHt" secondAttribute="bottom" constant="20" id="ZFI-F7-QgM"/>
                             <constraint firstItem="0ly-h7-tHt" firstAttribute="leading" secondItem="0xf-Km-U1y" secondAttribute="leading" constant="20" id="brm-Iy-T1r"/>
-                            <constraint firstItem="0xf-Km-U1y" firstAttribute="trailing" secondItem="xWZ-Ks-g6m" secondAttribute="trailing" constant="100" id="n09-go-eut"/>
+                            <constraint firstItem="Yzl-uI-pJF" firstAttribute="leading" secondItem="0xf-Km-U1y" secondAttribute="leading" constant="20" id="fUK-2Q-uLX"/>
+                            <constraint firstItem="0xf-Km-U1y" firstAttribute="trailing" secondItem="Yzl-uI-pJF" secondAttribute="trailing" constant="20" id="p4m-k3-vhh"/>
                             <constraint firstItem="JcQ-0J-p0n" firstAttribute="top" secondItem="9AK-fV-8w7" secondAttribute="bottom" constant="20" id="sgG-db-UMM"/>
-                            <constraint firstItem="Jx4-7m-zTY" firstAttribute="top" secondItem="xWZ-Ks-g6m" secondAttribute="bottom" constant="50" id="tdf-Ut-95R"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="chooseSongButton" destination="xWZ-Ks-g6m" id="NZr-G9-Och"/>
                         <outlet property="contentTextView" destination="9AK-fV-8w7" id="dEX-5x-kWT"/>
                         <outlet property="professorLabel" destination="0ly-h7-tHt" id="2yj-Uu-v0n"/>
                         <outlet property="songLabel" destination="JcQ-0J-p0n" id="guS-V1-2pA"/>
+                        <outlet property="songTextField" destination="Yzl-uI-pJF" id="fy3-QW-icZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNZ-BI-ebp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -430,29 +463,24 @@
                                                 <action selector="onLikeButton:" destination="zBT-hN-wkI" eventType="touchUpInside" id="4eQ-cS-kcZ"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibe:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylf-c0-O9n">
-                                            <rect key="frame" x="22" y="115" width="41" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5f-4u-UbK">
-                                            <rect key="frame" x="65" y="116" width="40" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw0-1Y-PEj">
+                                            <rect key="frame" x="25" y="110" width="378" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="tinted" title="Vibe"/>
+                                            <connections>
+                                                <action selector="onVibeButton:" destination="zBT-hN-wkI" eventType="touchUpInside" id="p2d-DM-n64"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="mw0-1Y-PEj" firstAttribute="bottom" secondItem="kp4-gy-y19" secondAttribute="bottomMargin" constant="2" id="1dW-Fj-SeJ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="9Oj-Ba-PNO" secondAttribute="trailing" constant="2" id="1xx-uL-tnA"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ylf-c0-O9n" secondAttribute="bottom" constant="2" id="9Fg-aj-Xnb"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="z5f-4u-UbK" secondAttribute="bottom" constant="2" id="AGP-bZ-lrf"/>
-                                        <constraint firstItem="z5f-4u-UbK" firstAttribute="leading" secondItem="ylf-c0-O9n" secondAttribute="trailing" constant="2" id="GFm-2O-wgx"/>
                                         <constraint firstItem="89K-xA-kGj" firstAttribute="leading" secondItem="kp4-gy-y19" secondAttribute="leadingMargin" constant="2" id="Hxc-4V-m1K"/>
-                                        <constraint firstItem="ylf-c0-O9n" firstAttribute="leading" secondItem="kp4-gy-y19" secondAttribute="leadingMargin" constant="2" id="MLx-Jy-rqy"/>
                                         <constraint firstItem="ZVf-Gb-Ej5" firstAttribute="centerY" secondItem="kp4-gy-y19" secondAttribute="centerY" id="TWc-GE-6CK"/>
                                         <constraint firstItem="BBD-ya-Qeh" firstAttribute="leading" secondItem="kp4-gy-y19" secondAttribute="leadingMargin" constant="2" id="UcA-6j-ejf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mw0-1Y-PEj" secondAttribute="trailing" constant="5" id="Wnc-HK-noJ"/>
                                         <constraint firstItem="9Oj-Ba-PNO" firstAttribute="top" secondItem="kp4-gy-y19" secondAttribute="topMargin" constant="2" id="c8X-Nm-2wp"/>
+                                        <constraint firstItem="mw0-1Y-PEj" firstAttribute="leading" secondItem="kp4-gy-y19" secondAttribute="leadingMargin" constant="5" id="cag-oT-f6D"/>
                                         <constraint firstItem="9Oj-Ba-PNO" firstAttribute="leading" secondItem="89K-xA-kGj" secondAttribute="trailing" constant="10" id="fzd-SU-l1M"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ZVf-Gb-Ej5" secondAttribute="trailing" constant="2" id="gUo-Ka-evk"/>
                                         <constraint firstItem="ZVf-Gb-Ej5" firstAttribute="leading" secondItem="BBD-ya-Qeh" secondAttribute="trailing" constant="10" id="kqx-I4-m43"/>
@@ -465,7 +493,7 @@
                                     <outlet property="likeButton" destination="ZVf-Gb-Ej5" id="38d-sD-2dD"/>
                                     <outlet property="likesLabel" destination="9Oj-Ba-PNO" id="Joi-B7-EVv"/>
                                     <outlet property="professorLabel" destination="89K-xA-kGj" id="NWM-6e-cno"/>
-                                    <outlet property="songLabel" destination="z5f-4u-UbK" id="8Yw-d2-gok"/>
+                                    <outlet property="vibeButton" destination="mw0-1Y-PEj" id="pGj-GJ-jqC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -487,6 +515,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Yos-ac-xRq" id="Slt-l6-zN9"/>
+                        <segue destination="tue-iH-XbH" kind="presentation" identifier="vibeSegue" id="pWw-ct-ur6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nww-gs-mI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

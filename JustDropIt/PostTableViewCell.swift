@@ -14,12 +14,14 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var songLabel: UILabel!
+    @IBOutlet weak var vibeButton: UIButton!
     
+    weak var viewController : UIViewController?
     var likes = ""
     var post = PFObject(className: "posts")
     var userID = ""
     var liked: Bool = false
+    var song = ""
     
     @IBAction func onLikeButton(_ sender: Any) {
         if !liked {
@@ -82,5 +84,8 @@ class PostTableViewCell: UITableViewCell {
         liked = true
         likeButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
     }
-
+    
+    @IBAction func onVibeButton(_ sender: Any) {
+        viewController!.performSegue(withIdentifier: "vibeSegue", sender: self)
+    }
 }

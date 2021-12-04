@@ -38,12 +38,12 @@ JustDropIt is an app that allows you to anonymously post comments about your cla
 - [x] Professor Methods
 - [x] Create Methods
 - [ ] Comment methods
-- [ ] Search Ability
+- [x] Search Ability
 
 **Optional Nice-to-have Stories**
 
-* Spotify Songs
-* Commenting on posts
+- [x] Song Methods
+- [ ] Dark Mode
 
 ### 2. Screen Archetypes
 

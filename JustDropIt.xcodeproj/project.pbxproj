@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54197D3CDE69103817992BCD /* Pods_JustDropItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A974708477A80BA45398483C /* Pods_JustDropItTests.framework */; };
+		BB212FE0275B38A10007FB98 /* VibeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB212FDF275B38A10007FB98 /* VibeViewController.swift */; };
 		BB2E3096274D88A600D3C1E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E3095274D88A600D3C1E7 /* LoginViewController.swift */; };
 		BB2E309C274DA95400D3C1E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E309B274DA95400D3C1E7 /* HomeViewController.swift */; };
 		BB2E309E274DE07600D3C1E7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E309D274DE07600D3C1E7 /* SettingsViewController.swift */; };
@@ -56,6 +57,7 @@
 		A974708477A80BA45398483C /* Pods_JustDropItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDropItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD832E96D2E42F5EC65B77FF /* Pods_JustDropIt_JustDropItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDropIt_JustDropItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54A9750522E65F10FE7BAFF /* Pods-JustDropIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDropIt.release.xcconfig"; path = "Target Support Files/Pods-JustDropIt/Pods-JustDropIt.release.xcconfig"; sourceTree = "<group>"; };
+		BB212FDF275B38A10007FB98 /* VibeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeViewController.swift; sourceTree = "<group>"; };
 		BB2E3095274D88A600D3C1E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB2E309B274DA95400D3C1E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BB2E309D274DE07600D3C1E7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				BB2E30A1274DFE7600D3C1E7 /* ProfessorViewController.swift */,
 				BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */,
 				BB2E30A3274DFE8B00D3C1E7 /* CreateViewController.swift */,
+				BB212FDF275B38A10007FB98 /* VibeViewController.swift */,
 			);
 			path = JustDropIt;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				BB2E309E274DE07600D3C1E7 /* SettingsViewController.swift in Sources */,
 				BB2E30A2274DFE7600D3C1E7 /* ProfessorViewController.swift in Sources */,
 				BB2E309C274DA95400D3C1E7 /* HomeViewController.swift in Sources */,
+				BB212FE0275B38A10007FB98 /* VibeViewController.swift in Sources */,
 				BB89B2A427508DC100B8D31C /* PostTableViewCell.swift in Sources */,
 				BB99BD5F275334D800C8A203 /* ProfessorTableViewCell.swift in Sources */,
 				BB99BD5D2753124200C8A203 /* SearchTableViewCell.swift in Sources */,

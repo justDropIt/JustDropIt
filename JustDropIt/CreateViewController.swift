@@ -13,15 +13,14 @@ class CreateViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var professorLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var songLabel: UILabel!
-    @IBOutlet weak var chooseSongButton: UIButton!
+    @IBOutlet weak var songTextField: UITextField!
+    
     
     var selectedProfessor = ""
     
     let likes = "0"
     let likedBy = [PFObject]()
     let author = PFUser.current()
-    let content = ""
-    let song = "new song"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +44,8 @@ class CreateViewController: UIViewController, UITextViewDelegate {
         let post = PFObject(className: "Posts")
         
         let university = PFUser.current()!["university"] as! String
+        
+        let song = songTextField.text
         
         post["author"] = PFUser.current()
         post["professor"] = selectedProfessor

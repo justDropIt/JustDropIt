@@ -25,8 +25,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
+        let thisUniversity = PFUser.current()!["university"] as! String
+        
+        let innerQuery : PFQuery = PFUser.query()!
+        innerQuery.whereKey("university", equalTo: thisUniversity)
+        
         let query = PFQuery(className:"Posts")
+        query.whereKey("author", matchesQuery: innerQuery)
         
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {
@@ -61,7 +67,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.professorLabel.text = "@" + professor
         cell.contentLabel.text = content
         cell.likesLabel.text = likes
-        cell.songLabel.text = song
+        
+        cell.song = song
+        cell.viewController = self
         
         tableView.rowHeight = 150
         
@@ -76,6 +84,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "vibeSegue" else {return}
+        
+        let cell = sender as! PostTableViewCell
+        
+        let song = cell.song
+        
+        let vibeViewController = segue.destination as! VibeViewController
+        
+        // Pass the selected object to the new view controller.
+        vibeViewController.song = song
     }
     
 

@@ -29,10 +29,16 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        let query = PFQuery(className:"Posts")
+        
         selectedProfessor.removeFirst()
-
+        
+        let thisUniversity = PFUser.current()!["university"] as! String
+        
+        let innerQuery : PFQuery = PFUser.query()!
+        innerQuery.whereKey("university", equalTo: thisUniversity)
+        
+        let query = PFQuery(className:"Posts")
+        query.whereKey("author", matchesQuery: innerQuery)
         query.whereKey("professor", equalTo: selectedProfessor)
 
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
@@ -45,7 +51,6 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.tableView.reloadData()
             }
         }
-        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

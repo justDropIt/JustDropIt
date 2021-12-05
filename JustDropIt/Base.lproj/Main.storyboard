@@ -40,11 +40,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Aol-dA-7fO">
+                            <searchBar contentMode="redraw" placeholder="Search Universities" translatesAutoresizingMaskIntoConstraints="NO" id="Aol-dA-7fO">
                                 <rect key="frame" x="10" y="338" width="428" height="51"/>
                                 <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="barTintColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

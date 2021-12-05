@@ -71,6 +71,16 @@ class CreateViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let firstVC = presentingViewController as? ProfessorViewController {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                firstVC.populatePosts()
+            }
+        }
+    }
+    
     
 
     /*

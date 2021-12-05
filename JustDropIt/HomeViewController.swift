@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var posts = [PFObject]()
     
+    var refreshControl: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        populatePosts()
+    }
+    
+    func populatePosts() {
         let thisUniversity = PFUser.current()!["university"] as! String
         
         let innerQuery : PFQuery = PFUser.query()!
@@ -41,6 +50,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else if let objects = objects {
                 // Do something with the found objects
                 self.posts = objects
+                self.posts.reverse()
                 self.tableView.reloadData()
             }
         }
@@ -100,6 +110,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Pass the selected object to the new view controller.
         vibeViewController.song = song
+    }
+    
+    @objc func onRefresh() {
+        populatePosts()
+        refreshControl.endRefreshing()
     }
     
     

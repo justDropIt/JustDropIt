@@ -15,6 +15,8 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var selectedProfessor = ""
     
+    var refreshControl: UIRefreshControl!
+    
     var posts = [PFObject]()
 
     override func viewDidLoad() {
@@ -25,6 +27,10 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +38,10 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
         
         selectedProfessor.removeFirst()
         
+        populatePosts()
+    }
+    
+    func populatePosts() {
         let thisUniversity = PFUser.current()!["university"] as! String
         
         let innerQuery : PFQuery = PFUser.query()!
@@ -48,6 +58,7 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
             } else if let objects = objects {
                 // Do something with the found objects
                 self.posts = objects
+                self.posts.reverse()
                 self.tableView.reloadData()
             }
         }
@@ -92,6 +103,11 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         return cell
+    }
+    
+    @objc func onRefresh() {
+        populatePosts()
+        refreshControl.endRefreshing()
     }
     
 

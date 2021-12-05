@@ -53,14 +53,18 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return posts.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        posts.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfessorTableViewCell") as! ProfessorTableViewCell
         
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
 
         let content = post["content"] as! String
         let likes = post["likes"] as! String
@@ -69,9 +73,11 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.likes = likes
         cell.post = post
 
+        cell.song = song
+        cell.viewController = self
+        
         cell.contentLabel.text = content
         cell.likesLabel.text = likes
-        cell.songLabel.text = song
         
         tableView.rowHeight = 150
         
@@ -93,11 +99,22 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        let createViewController = segue.destination as! CreateViewController
+        if segue.identifier == "createSegue" {
+            // Get the new view controller using segue.destination.
+            let createViewController = segue.destination as! CreateViewController
 
-        // Pass the selected object to the new view controller.
-        createViewController.selectedProfessor = selectedProfessor
+            // Pass the selected object to the new view controller.
+            createViewController.selectedProfessor = selectedProfessor
+        } else if segue.identifier == "vibeSegue2" {
+            let cell = sender as! ProfessorTableViewCell
+            
+            let song = cell.song
+            
+            let vibeViewController = segue.destination as! VibeViewController
+            
+            // Pass the selected object to the new view controller.
+            vibeViewController.song = song
+        }
     }
 
 }

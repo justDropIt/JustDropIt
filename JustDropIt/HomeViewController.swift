@@ -46,15 +46,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return posts.count
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
         
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
 
         let professor = post["professor"] as! String
         let content = post["content"] as! String
@@ -98,6 +101,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
         vibeViewController.song = song
     }
+    
+    
     
 
     /*

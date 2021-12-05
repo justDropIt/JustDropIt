@@ -13,13 +13,14 @@ class ProfessorTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var songLabel: UILabel!
+    @IBOutlet weak var vibeButton: UIButton!
     
-    
+    weak var viewController : UIViewController?
     var likes = ""
     var post = PFObject(className: "posts")
     var userID = ""
     var liked: Bool = false
+    var song = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -82,4 +83,9 @@ class ProfessorTableViewCell: UITableViewCell {
             unlike()
         }
     }
+    
+    @IBAction func onVibeButton(_ sender: Any) {
+        viewController!.performSegue(withIdentifier: "vibeSegue2", sender: self)
+    }
+    
 }

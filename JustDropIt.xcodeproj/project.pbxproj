@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54197D3CDE69103817992BCD /* Pods_JustDropItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A974708477A80BA45398483C /* Pods_JustDropItTests.framework */; };
+		73476C50275C7E2000FC785D /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73476C4F275C7E2000FC785D /* CommentCell.swift */; };
 		BB212FE0275B38A10007FB98 /* VibeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB212FDF275B38A10007FB98 /* VibeViewController.swift */; };
 		BB2E3096274D88A600D3C1E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E3095274D88A600D3C1E7 /* LoginViewController.swift */; };
 		BB2E309C274DA95400D3C1E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E309B274DA95400D3C1E7 /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 		0CC5961B38F24745B0237226 /* Pods-JustDropIt-JustDropItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDropIt-JustDropItUITests.release.xcconfig"; path = "Target Support Files/Pods-JustDropIt-JustDropItUITests/Pods-JustDropIt-JustDropItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		14F0651B53674A97BE24957A /* Pods-JustDropItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDropItTests.release.xcconfig"; path = "Target Support Files/Pods-JustDropItTests/Pods-JustDropItTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F7E126B19D671BA7D68829C /* Pods-JustDropIt-JustDropItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDropIt-JustDropItUITests.debug.xcconfig"; path = "Target Support Files/Pods-JustDropIt-JustDropItUITests/Pods-JustDropIt-JustDropItUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73476C4F275C7E2000FC785D /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		A661A15F3301CE5F69D5D0FE /* Pods-JustDropIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDropIt.debug.xcconfig"; path = "Target Support Files/Pods-JustDropIt/Pods-JustDropIt.debug.xcconfig"; sourceTree = "<group>"; };
 		A974708477A80BA45398483C /* Pods_JustDropItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDropItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD832E96D2E42F5EC65B77FF /* Pods_JustDropIt_JustDropItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDropIt_JustDropItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 				BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */,
 				BB2E30A3274DFE8B00D3C1E7 /* CreateViewController.swift */,
 				BB212FDF275B38A10007FB98 /* VibeViewController.swift */,
+				73476C4F275C7E2000FC785D /* CommentCell.swift */,
 			);
 			path = JustDropIt;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73476C50275C7E2000FC785D /* CommentCell.swift in Sources */,
 				BB2E30A4274DFE8B00D3C1E7 /* CreateViewController.swift in Sources */,
 				BB2E30A0274DF66B00D3C1E7 /* SearchViewController.swift in Sources */,
 				BB2E3096274D88A600D3C1E7 /* LoginViewController.swift in Sources */,

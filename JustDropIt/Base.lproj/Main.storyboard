@@ -428,12 +428,12 @@
         <scene sceneID="w5E-yo-VTe">
             <objects>
                 <viewController id="tSr-wl-4tS" customClass="HomeViewController" customModule="JustDropIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Yos-ac-xRq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Yos-ac-xRq">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="150" id="zBT-hN-wkI" customClass="PostTableViewCell" customModule="JustDropIt" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="150" id="zBT-hN-wkI" customClass="PostTableViewCell" customModule="JustDropIt" customModuleProvider="target">
                                 <rect key="frame" x="20" y="49" width="388" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zBT-hN-wkI" id="kp4-gy-y19">
@@ -508,6 +508,53 @@
                                     <outlet property="vibeButton" destination="mw0-1Y-PEj" id="pGj-GJ-jqC"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Comment Cell" id="p6G-46-i1R" customClass="CommentCell" customModule="JustDropIt" customModuleProvider="target">
+                                <rect key="frame" x="20" y="199" width="388" height="36.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p6G-46-i1R" id="VzY-PU-bsZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="388" height="36.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3i-LA-v4n">
+                                            <rect key="frame" x="8" y="8.0000000000000018" width="372" height="20.666666666666671"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Q3i-LA-v4n" secondAttribute="bottom" constant="8" id="9Gz-Ay-zT5"/>
+                                        <constraint firstAttribute="trailing" secondItem="Q3i-LA-v4n" secondAttribute="trailing" constant="8" id="LAg-Te-WLr"/>
+                                        <constraint firstItem="Q3i-LA-v4n" firstAttribute="leading" secondItem="VzY-PU-bsZ" secondAttribute="leading" constant="8" id="fgF-p0-3Ta"/>
+                                        <constraint firstItem="Q3i-LA-v4n" firstAttribute="top" secondItem="VzY-PU-bsZ" secondAttribute="top" constant="8" id="zNP-M5-rtr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="Q3i-LA-v4n" id="Me2-hN-qpd"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="Wi0-VM-NXL">
+                                <rect key="frame" x="20" y="235.66666793823242" width="388" height="37"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wi0-VM-NXL" id="sCg-m4-fdO">
+                                    <rect key="frame" x="0.0" y="0.0" width="388" height="37"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og7-eb-BAP">
+                                            <rect key="frame" x="8" y="8" width="372" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.63780605670000001" green="0.63780605670000001" blue="0.63780605670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="og7-eb-BAP" secondAttribute="trailing" constant="8" id="1gO-b2-g0i"/>
+                                        <constraint firstItem="og7-eb-BAP" firstAttribute="top" secondItem="sCg-m4-fdO" secondAttribute="top" constant="8" id="DBA-fN-AVk"/>
+                                        <constraint firstItem="og7-eb-BAP" firstAttribute="leading" secondItem="sCg-m4-fdO" secondAttribute="leading" constant="8" id="KoA-fS-QMu"/>
+                                        <constraint firstAttribute="bottom" secondItem="og7-eb-BAP" secondAttribute="bottom" constant="8" id="VaB-qN-qIh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="JustDropIt" id="FIz-Ky-dhh">
@@ -555,7 +602,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fUT-Vf-fsi"/>
+        <segue reference="pWw-ct-ur6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="at.badge.plus" catalog="system" width="128" height="111"/>

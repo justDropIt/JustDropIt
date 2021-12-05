@@ -6,7 +6,13 @@ target 'JustDropIt' do
   use_frameworks!
 
   # Pods for JustDropIt
+  pod 'AlamofireImage'
+
+ # Pods for YOUR_APP
   pod 'Parse'
+
+  pod "MessageInputBar"
+
 
   target 'JustDropItTests' do
     inherit! :search_paths

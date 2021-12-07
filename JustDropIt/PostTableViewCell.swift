@@ -18,7 +18,7 @@ class PostTableViewCell: UITableViewCell {
     
     weak var viewController : UIViewController?
     var likes = ""
-    var post = PFObject(className: "posts")
+    var post = PFObject(className: "Posts")
     var userID = ""
     var liked: Bool = false
     var song = ""
@@ -81,8 +81,10 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func alreadyLiked() {
-        liked = true
-        likeButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
+        if liked == false {
+            liked = true
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
+        }
     }
     
     @IBAction func onVibeButton(_ sender: Any) {

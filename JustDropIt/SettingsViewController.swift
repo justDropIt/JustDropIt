@@ -11,7 +11,8 @@ import Parse
 class SettingsViewController: UIViewController {
     
     @IBAction func onResetButton(_ sender: Any) {
-        PFUser.logOut()
+        
+        PFUser.current()?.deleteInBackground()
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         let LoginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")

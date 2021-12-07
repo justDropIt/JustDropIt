@@ -17,7 +17,7 @@ class ProfessorTableViewCell: UITableViewCell {
     
     weak var viewController : UIViewController?
     var likes = ""
-    var post = PFObject(className: "posts")
+    var post = PFObject(className: "Posts")
     var userID = ""
     var liked: Bool = false
     var song = ""

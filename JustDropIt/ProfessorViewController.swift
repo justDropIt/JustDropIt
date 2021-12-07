@@ -13,6 +13,9 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var professorLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    var post = PFObject(className: "Posts")
+    var comments = [PFObject]()
+    
     var selectedProfessor = ""
     
     var refreshControl: UIRefreshControl!
@@ -50,6 +53,7 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
         let query = PFQuery(className:"Posts")
         query.whereKey("author", matchesQuery: innerQuery)
         query.whereKey("professor", equalTo: selectedProfessor)
+        query.includeKeys(["author" , "comments" , "comments.author"])
 
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {
@@ -105,6 +109,16 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        post = posts[indexPath.section]
+        
+        comments = (post["comments"] as? [PFObject]) ?? []
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        performSegue(withIdentifier: "commentSegue2", sender: nil)
+    }
+    
     @objc func onRefresh() {
         populatePosts()
         refreshControl.endRefreshing()
@@ -130,6 +144,10 @@ class ProfessorViewController: UIViewController, UITableViewDelegate, UITableVie
             
             // Pass the selected object to the new view controller.
             vibeViewController.song = song
+        } else if segue.identifier == "commentSegue2" {
+            let commentTableViewController = segue.destination as! CommentTableViewController
+            commentTableViewController.post = post
+            commentTableViewController.comments = comments
         }
     }
 

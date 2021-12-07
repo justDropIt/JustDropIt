@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		54197D3CDE69103817992BCD /* Pods_JustDropItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A974708477A80BA45398483C /* Pods_JustDropItTests.framework */; };
 		BB212FE0275B38A10007FB98 /* VibeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB212FDF275B38A10007FB98 /* VibeViewController.swift */; };
+		BB2DA82F275EC40F004A0FBE /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA82E275EC40F004A0FBE /* CommentCell.swift */; };
+		BB2DA831275EC41E004A0FBE /* AddCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA830275EC41E004A0FBE /* AddCommentCell.swift */; };
 		BB2E3096274D88A600D3C1E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E3095274D88A600D3C1E7 /* LoginViewController.swift */; };
 		BB2E309C274DA95400D3C1E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E309B274DA95400D3C1E7 /* HomeViewController.swift */; };
 		BB2E309E274DE07600D3C1E7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E309D274DE07600D3C1E7 /* SettingsViewController.swift */; };
@@ -18,6 +20,8 @@
 		BB89B2A427508DC100B8D31C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89B2A327508DC100B8D31C /* PostTableViewCell.swift */; };
 		BB99BD5D2753124200C8A203 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99BD5C2753124200C8A203 /* SearchTableViewCell.swift */; };
 		BB99BD5F275334D800C8A203 /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */; };
+		BBA6C058275D512F000EED2E /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA6C057275D512F000EED2E /* CommentTableViewController.swift */; };
+		BBA6C05A275D51FB000EED2E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA6C059275D51FB000EED2E /* CommentTableViewCell.swift */; };
 		BBE1EF95274D733000C828F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1EF94274D733000C828F6 /* AppDelegate.swift */; };
 		BBE1EF97274D733000C828F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1EF96274D733000C828F6 /* SceneDelegate.swift */; };
 		BBE1EF9C274D733000C828F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE1EF9A274D733000C828F6 /* Main.storyboard */; };
@@ -58,6 +62,8 @@
 		AD832E96D2E42F5EC65B77FF /* Pods_JustDropIt_JustDropItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDropIt_JustDropItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54A9750522E65F10FE7BAFF /* Pods-JustDropIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDropIt.release.xcconfig"; path = "Target Support Files/Pods-JustDropIt/Pods-JustDropIt.release.xcconfig"; sourceTree = "<group>"; };
 		BB212FDF275B38A10007FB98 /* VibeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeViewController.swift; sourceTree = "<group>"; };
+		BB2DA82E275EC40F004A0FBE /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		BB2DA830275EC41E004A0FBE /* AddCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentCell.swift; sourceTree = "<group>"; };
 		BB2E3095274D88A600D3C1E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB2E309B274DA95400D3C1E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BB2E309D274DE07600D3C1E7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 		BB89B2A327508DC100B8D31C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		BB99BD5C2753124200C8A203 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewCell.swift; sourceTree = "<group>"; };
+		BBA6C057275D512F000EED2E /* CommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
+		BBA6C059275D51FB000EED2E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		BBE1EF91274D733000C828F6 /* JustDropIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustDropIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE1EF94274D733000C828F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE1EF96274D733000C828F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +181,10 @@
 				BB99BD5E275334D800C8A203 /* ProfessorTableViewCell.swift */,
 				BB2E30A3274DFE8B00D3C1E7 /* CreateViewController.swift */,
 				BB212FDF275B38A10007FB98 /* VibeViewController.swift */,
+				BBA6C057275D512F000EED2E /* CommentTableViewController.swift */,
+				BBA6C059275D51FB000EED2E /* CommentTableViewCell.swift */,
+				BB2DA82E275EC40F004A0FBE /* CommentCell.swift */,
+				BB2DA830275EC41E004A0FBE /* AddCommentCell.swift */,
 			);
 			path = JustDropIt;
 			sourceTree = "<group>";
@@ -437,12 +449,16 @@
 				BB2E30A0274DF66B00D3C1E7 /* SearchViewController.swift in Sources */,
 				BB2E3096274D88A600D3C1E7 /* LoginViewController.swift in Sources */,
 				BBE1EF95274D733000C828F6 /* AppDelegate.swift in Sources */,
+				BBA6C058275D512F000EED2E /* CommentTableViewController.swift in Sources */,
+				BB2DA82F275EC40F004A0FBE /* CommentCell.swift in Sources */,
 				BBE1EF97274D733000C828F6 /* SceneDelegate.swift in Sources */,
 				BB2E309E274DE07600D3C1E7 /* SettingsViewController.swift in Sources */,
 				BB2E30A2274DFE7600D3C1E7 /* ProfessorViewController.swift in Sources */,
 				BB2E309C274DA95400D3C1E7 /* HomeViewController.swift in Sources */,
 				BB212FE0275B38A10007FB98 /* VibeViewController.swift in Sources */,
+				BB2DA831275EC41E004A0FBE /* AddCommentCell.swift in Sources */,
 				BB89B2A427508DC100B8D31C /* PostTableViewCell.swift in Sources */,
+				BBA6C05A275D51FB000EED2E /* CommentTableViewCell.swift in Sources */,
 				BB99BD5F275334D800C8A203 /* ProfessorTableViewCell.swift in Sources */,
 				BB99BD5D2753124200C8A203 /* SearchTableViewCell.swift in Sources */,
 			);

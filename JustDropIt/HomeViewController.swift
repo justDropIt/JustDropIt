@@ -12,6 +12,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet var tableView: UITableView!
     
+    var post = PFObject(className: "Posts")
+    var comments = [PFObject]()
+    
     var posts = [PFObject]()
     
     var refreshControl: UIRefreshControl!
@@ -42,6 +45,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let query = PFQuery(className:"Posts")
         query.whereKey("author", matchesQuery: innerQuery)
+        query.includeKeys(["author" , "comments" , "comments.author"])
         
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {
@@ -100,16 +104,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "vibeSegue" else {return}
+        if segue.identifier == "vibeSegue" {
         
-        let cell = sender as! PostTableViewCell
+            let cell = sender as! PostTableViewCell
+            
+            let song = cell.song
+            
+            let vibeViewController = segue.destination as! VibeViewController
+            
+            // Pass the selected object to the new view controller.
+            vibeViewController.song = song
+        } else if segue.identifier == "commentSegue" {
+            let commentTableViewController = segue.destination as! CommentTableViewController
+            commentTableViewController.post = post
+            commentTableViewController.comments = comments
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        post = posts[indexPath.section]
         
-        let song = cell.song
+        comments = (post["comments"] as? [PFObject]) ?? []
         
-        let vibeViewController = segue.destination as! VibeViewController
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        // Pass the selected object to the new view controller.
-        vibeViewController.song = song
+        performSegue(withIdentifier: "commentSegue", sender: nil)
     }
     
     @objc func onRefresh() {

@@ -219,3 +219,6 @@ query.findObjectsInBackground {(posts: [PFObject]?, error: Error?) in
 ## Build Sprint 2
 
 ![gif](https://imgur.com/3WNs3i8.gif)
+
+## Build Sprint 3
+![gif](https://github.com/justDropIt/JustDropIt/blob/main/ezgif.com-gif-maker.gif)

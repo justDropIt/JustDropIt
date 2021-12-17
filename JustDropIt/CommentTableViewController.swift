@@ -52,13 +52,15 @@ class CommentTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let returnVal = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath)
         
+        self.tableView.rowHeight = 150
+        
         if indexPath.section == 0 {
             let  cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as! CommentTableViewCell
             cell.professorLabel.text = post["professor"] as? String
             cell.contentLabel.text = post["content"] as? String
             cell.likesLabel.text = post["likes"] as? String
             
-            tableView.rowHeight = 150
+            self.tableView.rowHeight = 150
             
             return cell
             
@@ -69,13 +71,13 @@ class CommentTableViewController: UITableViewController {
             
             cell.commentLabel.text = comment["text"] as? String
             
-            tableView.rowHeight = 50
+            self.tableView.rowHeight = 50
             
             return cell
         } else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell", for: indexPath) as! AddCommentCell
             
-            tableView.rowHeight = 50
+            self.tableView.rowHeight = 50
             
             return cell
         }

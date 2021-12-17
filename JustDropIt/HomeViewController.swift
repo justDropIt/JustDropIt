@@ -29,12 +29,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
+        
+        populatePosts()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        populatePosts()
     }
     
     func populatePosts() {

@@ -58,8 +58,14 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let thisUniversity = PFUser.current()!["university"] as! String
+        
+        let innerQuery : PFQuery = PFUser.query()!
+        innerQuery.whereKey("university", equalTo: thisUniversity)
 
         let query = PFQuery(className:"Posts")
+        query.whereKey("author", matchesQuery: innerQuery)
         query.selectKeys(["professor"])
         
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in

@@ -12,14 +12,35 @@ class SettingsViewController: UIViewController {
     
     @IBAction func onResetButton(_ sender: Any) {
         
-        PFUser.current()?.deleteInBackground()
+//        PFUser.current()?.deleteInBackground(block: { (success, error) -> Void in
+//            if success {
+//                UserDefaults.standard.removeObject(forKey: "userID")
+//
+//                let main = UIStoryboard(name: "Main", bundle: nil)
+//                let LoginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+//
+//                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+//
+//                delegate.window?.rootViewController = LoginViewController
+//            } else {
+//                print(error)
+//            }
+//        })
         
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let LoginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
-        
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
-        
-        delegate.window?.rootViewController = LoginViewController
+        PFUser.logOutInBackground(block: { (error) -> Void in
+            if (error != nil) {
+                print(error)
+            } else {
+                UserDefaults.standard.removeObject(forKey: "userID")
+
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let LoginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+
+                delegate.window?.rootViewController = LoginViewController
+            }
+        })
     }
     
     override func viewDidLoad() {

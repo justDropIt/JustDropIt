@@ -359,12 +359,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@professor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ly-h7-tHt">
                                 <rect key="frame" x="20" y="20" width="388" height="36"/>
+                                <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-7m-zTY">
                                 <rect key="frame" x="20" y="361" width="388" height="38"/>
+                                <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Post">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -375,12 +377,14 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcQ-0J-p0n">
                                 <rect key="frame" x="20" y="246" width="388" height="21"/>
+                                <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="content..." translatesAutoresizingMaskIntoConstraints="NO" id="9AK-fV-8w7">
                                 <rect key="frame" x="20" y="76" width="388" height="150"/>
+                                <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="gqz-dE-dMY"/>
                                 </constraints>
@@ -390,12 +394,13 @@
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add link here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-uI-pJF">
                                 <rect key="frame" x="20" y="287" width="388" height="34"/>
+                                <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="url"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0xf-Km-U1y"/>
-                        <color key="backgroundColor" red="0.180530205" green="0.95968152080000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.17938702534331996" green="0.98775681398048687" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Jx4-7m-zTY" firstAttribute="top" secondItem="Yzl-uI-pJF" secondAttribute="bottom" constant="40" id="08t-Y6-lOL"/>
                             <constraint firstItem="Jx4-7m-zTY" firstAttribute="leading" secondItem="0xf-Km-U1y" secondAttribute="leading" constant="20" id="21D-Wa-H9M"/>
@@ -647,14 +652,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCommentCell" id="6hm-5A-MR1" customClass="AddCommentCell" customModule="JustDropIt" customModuleProvider="target">
-                                <rect key="frame" x="20" y="245.66666793823242" width="388" height="47.666667938232422"/>
+                                <rect key="frame" x="20" y="245.66666793823242" width="388" height="47.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6hm-5A-MR1" id="BgE-C1-fVm">
-                                    <rect key="frame" x="0.0" y="0.0" width="388" height="47.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="388" height="47.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfb-Uy-suj">
-                                            <rect key="frame" x="22" y="13.000000000000002" width="344" height="21.666666666666671"/>
+                                            <rect key="frame" x="22" y="12.999999999999998" width="344" height="21.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -681,7 +686,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VI3-p8-QtA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1890" y="802"/>
+            <point key="canvasLocation" x="2787" y="802"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xU1-2j-HR7">
